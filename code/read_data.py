@@ -20,7 +20,6 @@ symbol_dict = {}
 ct = 0
 
 for cur_file in xml_file_list:
-    #cur_file = xml_file_list[0]
     tree = ET.parse(cur_file)
     root = tree.getroot()
     full_trace_list = root.findall("{http://www.w3.org/2003/InkML}trace")
@@ -32,25 +31,18 @@ for cur_file in xml_file_list:
         if part == None:
             continue
         
-        symbol = part.text
-        #print symbols
-        # now get all the vector data
         ct += 1
-        
+        symbol = part.text
         cur_trace_list = traceGroup.findall("{http://www.w3.org/2003/InkML}traceView")
         trace_id_list = [int(elem.attrib.get('traceDataRef')) for elem in cur_trace_list]
-        #cur_data = []
         new_cur_data = ""
         
         for trace_id in trace_id_list:
             new_cur_data += full_trace_list[trace_id].text
             
         new_cur_data = new_cur_data.replace(',', '\n')
-        #print new_cur_data
         new_cur_data = StringIO(new_cur_data)
         new_cur_data_arr = np.loadtxt(new_cur_data)
-        #cur_data.append(new_cur_data_arr)
-        #print symbol
         scatter(new_cur_data_arr[:,0],-new_cur_data_arr[:,1])
         xlim([0,20000])
         ylim([-10000,0])
@@ -66,7 +58,7 @@ for symbol in symbol_dict:
     print symbol, len(symbol_dict[symbol])
     
 
-print "Total number of character: ", ct
+print "Total number of example characters: ", ct
 
 
 
