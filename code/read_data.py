@@ -23,7 +23,7 @@ from pylab import *
 from skimage import morphology
 
 # are we plotting all the image transformations
-DEBUG = False
+DEBUG = True
 
 # pixel dimensions to which we are going to downsample
 PIXEL_DIM = 28
@@ -40,6 +40,7 @@ REL_PATH = "../data/CROHME2012_data/trainData"
 # where are we saving the outputs to
 DUMP_LOCATION = "../pickle_files/"
 SAVE_FILENAME = os.path.join(DUMP_LOCATION,"raw_symbols.p")
+SYMBOL_LIST_FILENAME = "symbol_list.txt"
 
 # x resolution which will be used to interpolate between data points
 INTERP_RES = 1
@@ -146,6 +147,7 @@ def normalize_symbol(data_arr):
     
     # must flip this dimension (it's f-ed up in the inkml files)
     data_arr[:,1] = -1 * data_arr[:,1]
+    #print len(data_arr)
     min_x = min(data_arr[:,0]) - 200
     min_y = min(data_arr[:,1]) - 200
     
@@ -166,13 +168,19 @@ def lin_interp_stroke(data_arr):
     interp_data_arr = None
     data_len = len(data_arr)
     
+    # don't try to interpolate if we only have one point!
+    if (len(data_arr) == 1) or (data_arr.ndim == 1):
+        return data_arr
+    
     for ind in range(data_len-1):  
         
         #print data_arr[ind:ind+2,:]
         x_diff = abs(data_arr[ind,0] - data_arr[ind+1,0])
         y_diff = abs(data_arr[ind,1] - data_arr[ind+1,1])
         
+        # if two points between which we are interpolating is 'flat'
         if x_diff > y_diff: 
+            
             if data_arr[ind,0] < data_arr[ind+1,0]:
                 g = interp1d([data_arr[ind,0],data_arr[ind+1,0]] ,[data_arr[ind,1],data_arr[ind+1,1]],kind=KIND)
             else:
@@ -182,6 +190,8 @@ def lin_interp_stroke(data_arr):
             
             x_new = np.arange(min(data_arr[ind:ind+2,0]),max(data_arr[ind:ind+2,0]),INTERP_RES)
             y_new = g(x_new)
+            
+        # if the two points between which we are interpolating is tall
         else: 
             if data_arr[ind,1] < data_arr[ind+1,1]:
                 g = interp1d([data_arr[ind,1],data_arr[ind+1,1]] ,[data_arr[ind,0],data_arr[ind+1,0]],kind=KIND)
@@ -268,6 +278,8 @@ def loop_over_data():
             for trace_id in trace_id_list:
                 stroke = full_trace_list[trace_id].text
                 stroke_arr = stroke_to_arr(stroke)
+                
+                # interpolate stroke
                 stroke_arr = lin_interp_stroke(stroke_arr) 
                 
                 if new_cur_data == None:
@@ -275,13 +287,13 @@ def loop_over_data():
                 else: 
                     new_cur_data = np.vstack((new_cur_data,stroke_arr))
                     
+            # normalize full symbol 
             new_cur_data = normalize_symbol(new_cur_data)
-            gen_opencv_mat(new_cur_data)
+            
+            #gen_opencv_mat(new_cur_data)
             
             if PLOT_ME: 
                 scatter(new_cur_data[:,0],new_cur_data[:,1])
-                #xlim([0,20000])
-                #ylim([10000,0])
                 title(symbol)
                 show()
             
@@ -292,8 +304,15 @@ def loop_over_data():
     
     with open(SAVE_FILENAME,'wb') as f:
         pickle.dump(symbol_dict, f, protocol=0)   
+        print "Successfully saved pickle file to: " + str(SAVE_FILENAME)
         
-    print "Successfully saved pickle file to: " + str(SAVE_FILENAME)
+    with open(SYMBOL_LIST_FILENAME,'wb') as f: 
+        for key in symbol_dict.keys():
+            f.write(key + "\n")
+            
+        print "Successfully list of symbols to: " + str(SYMBOL_LIST_FILENAME)
+
+    
     
 if __name__ == "__main__":
     loop_over_data()
