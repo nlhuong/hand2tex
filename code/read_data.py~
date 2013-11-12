@@ -23,7 +23,7 @@ from pylab import *
 from skimage import morphology
 
 # are we plotting all the image transformations
-DEBUG = True
+DEBUG = False
 
 # pixel dimensions to which we are going to downsample
 PIXEL_DIM = 28
