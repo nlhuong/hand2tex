@@ -26,7 +26,7 @@ from pylab import *
 import settings
 
 # are we plotting all the image transformations
-DEBUG = False
+DEBUG = True
 
 # pixel dimensions to which we are going to downsample
 FULL_DIM = 28
@@ -64,9 +64,10 @@ def xy_to_bitmap(data_arr):
     and we are done.  
     """
     
+    vis = np.zeros((FULL_DIM, FULL_DIM),np.uint8)
+    
     # if we have a dot, for example 
     if (len(data_arr) == 1) or (data_arr.ndim == 1): 
-        vis = np.zeros((FULL_DIM, FULL_DIM),np.uint8)
         mid_pt = int(FULL_DIM * 0.5)
         vis[mid_pt,mid_pt] = 1
         
@@ -80,11 +81,11 @@ def xy_to_bitmap(data_arr):
     # make it fit in 20 x 20 box
     data_arr = data_arr * dim_stretch
     
-    # now translate this box to middle part of 28 x 28 
+    # now translate this box to middle part of 28 x 28
+    
+    #TODO: this way of shifting the bounding box is completely wrong
     data_arr = data_arr + (FULL_DIM - BOUND_DIM) * 0.5
-    
-    vis = np.zeros((FULL_DIM, FULL_DIM),np.uint8)
-    
+        
     # this code is in case you want to center using COM
 #     avg_x = data_arr[:,0].mean()
 #     avg_y = data_arr[:,1].mean()
@@ -129,18 +130,25 @@ def xy_to_cv(data_arr):
 def gen_opencv_mat(data_arr):
     """
     Some experimentation with segmenting symbols.
+    
+    Data arr is just xy coordinates. 
     """
     bin_mat = xy_to_cv(data_arr)
     
+    #print bin_mat
+    
     vis_2 = cv2.cvtColor(bin_mat,cv2.COLOR_GRAY2BGR)
-    cv2.imwrite('sof2.png',vis_2)
+    img = vis_2
+    
+    #cv2.imwrite('sof2.png',vis_2)
         
     # Load the image
-    img = cv2.imread('sof2.png')
+    #img = cv2.imread('sof2.png')
+    #
     #img = cv2.imread('test_case.png')
     
     # convert to grayscale
-    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(vis_2,cv2.COLOR_BGR2GRAY)
     
     # smooth the image to avoid noises
     gray = cv2.medianBlur(gray,0)
@@ -439,6 +447,34 @@ def special_treatment(symbol,trace_list,bitmap_list,symbol_list):
         
     return 
 
+def view_bitmap(bitmap):
+    img = cv2.cvtColor(bitmap*255,cv2.COLOR_GRAY2BGR)
+    cv2.imshow('thresh_after_dilation',img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+
+def dilate_bitmap(bitmap):
+    """
+    Converts binary matrix to double valued matrix by smoothing the data.
+    
+    This may help with classification.
+    """
+    
+    # first convert to 255 scale 
+    bitmap = bitmap * 255
+    img = cv2.cvtColor(bitmap,cv2.COLOR_GRAY2BGR)
+    
+    # apply some dilation and erosion to join the gaps
+    thresh = cv2.dilate(img,None,iterations = 1)
+    
+    #if DEBUG:
+    cv2.imshow('thresh_after_dilation',thresh)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+    return 
+
 def normal_treatment(symbol,trace_list,bitmap_list,symbol_list,plot_me=False):
     """
     Takes a new set of strokes and saves it in the right format for the classifier.
@@ -477,6 +513,9 @@ def normal_treatment(symbol,trace_list,bitmap_list,symbol_list,plot_me=False):
     
     # convert xy coordinates to bitmap
     new_cur_data = xy_to_bitmap(new_cur_data)
+    
+    #dilate_bitmap(new_cur_data)
+    view_bitmap(new_cur_data)
     
     # flatten the bitmap (to make it compatible with mnist)
     new_cur_data = new_cur_data.reshape(FULL_DIM * FULL_DIM)
@@ -536,13 +575,27 @@ def loop_over_data():
                 
     print "Total number of example characters: ", ct
     
-    dataset = (np.array(bitmap_list),np.array(symbol_list))
+    # now create list of indices so that each class has a integer valued membership
+    symbol_dict = {}
+    symbol_ind_list = []
+    cur_hash_num = 0
+    
+    for cur_symbol in symbol_list: 
+        if cur_symbol not in symbol_dict.keys():
+            cur_hash_num += 1 
+            symbol_dict.update({cur_symbol:cur_hash_num})
+            
+        new_ind = symbol_dict[cur_symbol]
+        symbol_ind_list.append(new_ind)
+    
+    dataset = (np.array(bitmap_list),np.array(symbol_ind_list),np.array(symbol_list))
     
     save_filename = os.path.join(DUMP_LOCATION,"clean_symbols.p")
     with open(save_filename,'wb') as f:
         pickle.dump(dataset, f, protocol=0)   
         print "Successfully saved pickle file to: " + str(save_filename)
         
+    
 #     with open(SYMBOL_LIST_FILENAME,'wb') as f: 
 #         for key in symbol_dict.keys():
 #             f.write(key + "\n")
