@@ -5,9 +5,19 @@ Created on Nov 11, 2013
 
 List of special characters that will be treated differently than others.  
 '''
-# maps symbols with special components to the number of connected components they contain
-special_char = {'=':2,
+
+# maps symbols with special components to the number of strokes they contain
+mult_comp_symbols = {
+                '=':2,
                 'i':2,
-                '\tan':3,
+                '\tan':4,
                 '\cos':3,
-                '\sin':4}
+                '\sin':4, 
+                '\geq':2,
+                '\leq':2,
+                '\log':3,
+                '\div':3,
+                '\lim':4,
+                '!':2,
+                '\ldots':3,
+                }
