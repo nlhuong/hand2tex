@@ -1,0 +1,801 @@
+<?xml version="1.0"?>
+
+<!--
+	Test grammar for latex string for PART 3 of CROHME  2012.
+-->
+<grammar name="latex">
+	<rule category="S">
+		<category name="FORMULA"/>
+	</rule>
+	
+	<rule category="FORMULA">
+		<category name="EXP_OR_BRACED_EXP"/>
+	</rule>
+	<rule category="FORMULA">
+		<category name="EXP_OR_BRACED_EXP"/>
+		<category name="OPEQ"/>
+		<category name="EXP_OR_BRACED_EXP"/>
+	</rule>
+	<rule category="FORMULA">
+		<category name="EXP_OR_BRACED_EXP"/>
+		<category name="OPEQ"/>
+		<category name="EXP_OR_BRACED_EXP"/>
+		<category name="OPEQ"/>
+		<category name="EXP_OR_BRACED_EXP"/>
+	</rule>
+	<rule category="FORMULA">
+		<category name="EXP_OR_BRACED_EXP"/>
+		<category name="COMMA"/>
+		<category name="EXP_LIST"/>
+	</rule>	
+	<rule category="FORMULA">
+		<category name="QUANTIFIER_LIST"/>
+		<category name="FORMULA"/>
+	</rule>	
+	<rule category="FORMULA">
+		<category name="QUANTIFIER_LIST"/>
+	</rule>	
+	<rule category="EXP_LIST">
+		<category name="EXP_OR_BRACED_EXP"/>
+		<category name="COMMA"/>
+		<category name="EXP_LIST"/>
+	</rule>	
+	<rule category="EXP_LIST">
+		<category name="DOTS"/>
+		<category name="COMMA"/>
+		<category name="EXP_LIST"/>
+	</rule>	
+	<rule category="EXP_LIST">
+		<category name="EXP_OR_BRACED_EXP"/>
+	</rule>	
+	<rule category="EXP_OR_BRACED_EXP">
+		<category name="MUTE_LBRACE"/>
+		<category name="EXP_OR_BRACED_EXP"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="EXP_OR_BRACED_EXP">
+		<category name="EXP"/>
+	</rule>
+	
+<!-- Exp <- NotSum | Sum (IDR)
+Formula <- Exp Eq Exp (OR) | Exp (IDR) -->
+	<rule category="EXP">
+		<category name="SUM"/>
+	</rule>
+	<rule category="SYMB_OR_BRACED_EXP">
+		<category name="SYMBOL"/>
+	</rule>
+	<rule category="SYMB_OR_BRACED_EXP">
+		<category name="MUTE_LBRACE"/>
+		<category name="EXP"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+
+<!-- Set simple operations -->
+
+	<rule category="QUANTIFIER_LIST">
+		<category name="QUANTIFIER_ONE"/>
+	</rule>
+	<rule category="QUANTIFIER_LIST">
+		<category name="QUANTIFIER_ONE"/>
+		<category name="COMMA"/>
+	</rule>	
+	<rule category="QUANTIFIER_ONE">
+		<category name="QUANTIFIER_SYMB"/>
+		<category name="LETTER"/>
+	</rule>	
+	<rule category="QUANTIFIER_ONE">
+		<category name="QUANTIFIER_SYMB"/>
+		<category name="LETTER"/>
+		<category name="QUANTIFIER_OP"/>
+		<category name="LETTER"/>
+	</rule>	
+	<rule category="QUANTIFIER_ONE">
+		<category name="QUANTIFIER_SYMB"/>
+		<category name="LETTER"/>
+		<category name="QUANTIFIER_OP"/>
+		<category name="PAREXP"/>
+	</rule>	
+<!-- Sum grammar :
+Sum <- Op notSum (HP) | Exp Op NotSum (OR) ) | Exp Op dots (OR)
+-->
+	<rule category="SUM">
+		<category name="OPSUM"/>
+		<category name="SUMPAIR"/>
+	</rule>
+	<rule category="SUM">
+		<category name="SUMPAIR"/>
+	</rule>
+	<rule category="SUMPAIR">
+		<category name="SUMPAIR_OR_BRACED_SUMPAIRE"/>
+		<category name="OPSUM"/>
+		<category name="SUMEND"/>
+	</rule>
+	<rule category="SUMPAIR">
+		<category name="PROD_OR_BRACED_PROD"/>
+	</rule>
+	<rule category="SUMEND">
+		<category name="DOTS"/>
+	</rule>
+	<rule category="SUMEND">
+		<category name="PROD_OR_BRACED_PROD"/>
+	</rule>	
+	<rule category="SUMPAIR"><!-- special case of right recursive sum with mute brace-->
+		<category name="SUMPAIR_OR_BRACED_SUMPAIRE"/>
+		<category name="OPSUM"/>
+		<category name="MUTE_LBRACE"/>
+		<category name="SUMPAIR"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="SUMPAIR_OR_BRACED_SUMPAIRE"> <!--special case of  recursive sum with mute brace-->
+		<category name="MUTE_LBRACE"/>
+		<category name="SUMPAIR_OR_BRACED_SUMPAIRE"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="SUMPAIR_OR_BRACED_SUMPAIRE"> <!--special case of  recursive sum with mute brace-->
+		<category name="SUMPAIR"/>
+	</rule>	
+
+<!--NotSumGrammar :
+NotSum ? NotSum NotSum (HP) | Symbol (IDR)
+-->	
+	<rule category="PROD">
+		<category name="PROD_OR_BRACED_PROD"/>
+		<category name="TERM"/>
+	</rule>
+	<rule category="PROD">
+		<category name="PROD_OR_BRACED_PROD"/>
+		<category name="OPPROD"/>
+		<category name="TERM"/>
+	</rule>
+	<rule category="PROD">
+		<category name="TERM"/>
+	</rule>
+	
+	<rule category="TERM">
+		<category name="SYMB_OR_BRACED_SYMB"/>
+	</rule>
+	<rule category="TERM">
+		<category name="FLOAT"/>
+	</rule>
+	<rule category="TERM">
+		<category name="SYMB_OR_BRACED_SYMB"/>
+		<category name="FACTORIAL"/>
+	</rule>
+	<rule category="TERM_OR_BRACED_PROD"><!-- special case of  recursive prood with mute brace-->
+		<category name="MUTE_LBRACE"/>
+		<category name="PROD_OR_BRACED_PROD"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="TERM_OR_BRACED_PROD"><!-- special case of  recursive prood with mute brace-->
+		<category name="TERM"/>
+	</rule>
+	<rule category="PROD_OR_BRACED_PROD"><!-- special case of  recursive prood with mute brace-->
+		<category name="MUTE_LBRACE"/>
+		<category name="PROD_OR_BRACED_PROD"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="PROD_OR_BRACED_PROD"><!-- special case of  recursive prood with mute brace-->
+		<category name="PROD"/>
+	</rule>
+	<rule category="PROD"><!-- special case of right recursive prood with mute brace-->
+		<category name="PROD_OR_BRACED_PROD"/>
+		<category name="MUTE_LBRACE"/>
+		<category name="PROD"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="PROD"><!-- special case of right recursive prood with mute brace-->
+		<category name="PROD_OR_BRACED_PROD"/>
+		<category name="OPPROD"/>
+		<category name="MUTE_LBRACE"/>
+		<category name="PROD"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+
+<!--Paranthesis grammar :
+ParExp ? OpenP Exp CloseP (PR)
+NotSum ? ParExp (IDR)-->
+	<rule category="PAREXP">
+		<category name="OPENP"/>
+		<category name="EXP_LIST"/>
+		<category name="CLOSEP"/>
+	</rule>
+	<rule category="PAREXP">
+		<category name="OPEN_BRACKET"/>
+		<category name="EXP_LIST"/>
+		<category name="CLOSE_BRACKET"/>
+	</rule>
+	<rule category="PAREXP">
+		<category name="OPEN_BRACE"/>
+		<category name="EXP_LIST"/>
+		<category name="CLOSE_BRACE"/>
+	</rule>
+	<rule category="TERM">
+		<category name="PAREXP"/>
+	</rule>
+	<rule category="PAREXP">
+		<category name="MUTE_LBRACE"/>
+		<category name="PAREXP"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+
+<!--Functions grammar :
+Function <- Func Exp (SupR) | Func symbol (subR) | Func (IDR)
+NotSum <- Function notSum (HP)
+-->	
+	<rule category="FUNCTION">
+		<category name="FUNCTRIGO"/>
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_SYMB"/>
+	</rule>
+	<rule category="FUNCTION">
+		<category name="FUNCLOG"/>
+		<category name="SUB"/>
+		<category name="SYMB_OR_BRACED_SYMB"/>
+	</rule>
+	<rule category="FUNCTION">
+		<category name="FUNCLOG"/>
+	</rule>
+	<rule category="FUNCTION">
+		<category name="FUNCTRIGO"/>
+	</rule>
+
+	<rule category="TERM">
+		<category name="FUNCTION"/>
+		<category name="TERM_OR_BRACED_PROD"/>
+	</rule>
+	<rule category="TERM">
+		<category name="FUNCTION"/>
+		<category name="PAREXP"/>
+	</rule>
+<!-- Sub/Supscript grammar :
+NotSum <- NotExp Exp (SupR) | Symbol Symbol (SubR)
+NotExp <- Symbol | Func | ParExp (IDR)
+-->	
+	<rule category="TERM">
+		<category name="TERM_OR_BRACED_PROD"/>
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>
+	</rule>
+	<rule category="TERM">
+		<category name="PAREXP"/>
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>
+	</rule>
+	<rule category="TERM">
+		<category name="SYMB_OR_BRACED_SYMB"/>
+		<category name="SUB"/>
+		<category name="SYMB_OR_BRACED_EXP"/>
+	</rule>
+	
+<!--Fractionbar grammar :
+NotSum ? Exp FractionBar Exp (FrR)-->
+	<rule category="FRACTIONBAR">
+		<category terminal="true" name="\frac"/>
+	</rule>
+	<rule category="TERM">
+		<category name="FRACTIONBAR"/>
+		<category name="SYMB_OR_BRACED_EXP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>
+	</rule>
+<!-- Limit -->
+	<rule category="LIMITWORD">
+		<category terminal="true" name="\lim"/>
+	</rule>
+
+	<rule category="LIMIT">
+		<category name="LIMITWORD"/>
+		<category name="SUB"/>
+		<category name="SUBLIMIT"/>
+		<category name="EXP"/>		
+	</rule>
+	<rule category="LIMIT">
+		<category name="LIMITWORD"/>
+		<category name="EXP"/>		
+	</rule>
+	<rule category="SUBLIMIT">
+		<category name="SYMB_OR_BRACED_SYMB"/>		
+	</rule>
+	<rule category="SUBLIMIT">
+		<category name="MUTE_LBRACE"/>
+		<category name="SYMB_OR_BRACED_SYMB"/>		
+		<category name="LIMARROW"/>		
+		<category name="EXP"/>			
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="EXP">
+		<category name="LIMIT"/>		
+	</rule>
+<!-- Series -->
+	<rule category="SERIES">
+		<category name="BIGOP"/>		
+		<category name="TERM_OR_BRACED_PROD"/>		
+	</rule>
+	<rule category="SERIES">
+		<category name="BIGOP"/>
+		<category name="SUB"/>
+		<category name="SUBSERIES"/>		
+		<category name="TERM_OR_BRACED_PROD"/>		
+	</rule>
+	<rule category="SERIES">
+		<category name="BIGOP"/>
+		<category name="SUB"/>
+		<category name="SUBSERIES"/>		
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>		
+		<category name="TERM_OR_BRACED_PROD"/>		
+	</rule>
+	<rule category="SERIES">
+		<category name="BIGOP"/>
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>		
+		<category name="SUB"/>
+		<category name="SUBSERIES"/>		
+		<category name="TERM_OR_BRACED_PROD"/>		
+	</rule>
+	<rule category="SUBSERIES">
+		<category name="SYMB_OR_BRACED_EXP"/>		
+	</rule>
+	<rule category="SUBSERIES">
+		<category name="MUTE_LBRACE"/>	
+		<category name="SYMB_OR_BRACED_SYMB"/>		
+		<category name="OPEQ"/>		
+		<category name="EXP"/>		
+		<category name="MUTE_RBRACE"/>
+	</rule>
+
+	<rule category="TERM">
+		<category name="SERIES"/>		
+	</rule>
+	
+	<rule category="CONTISUM">
+		<category name="INTEGRAL"/>
+		<category name="SUB"/>
+		<category name="SYMB_OR_BRACED_EXP"/><!-- idem than SYMB_OR_BRACED_EXP : a symbol or an braced exp-->		
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/><!-- idem than SYMB_OR_BRACED_EXP : a symbol or an braced exp-->			
+		<category name="CONTISUM_END"/>		
+	</rule>
+		<rule category="CONTISUM">
+		<category name="INTEGRAL"/>
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/><!-- idem than SYMB_OR_BRACED_EXP : a symbol or an braced exp-->			
+		<category name="SUB"/>
+		<category name="SYMB_OR_BRACED_EXP"/><!-- idem than SYMB_OR_BRACED_EXP : a symbol or an braced exp-->		
+		<category name="CONTISUM_END"/>		
+	</rule>
+	<rule category="CONTISUM">
+		<category name="INTEGRAL"/>
+		<category name="CONTISUM_END"/>		
+	</rule>
+	
+	<rule category="CONTISUM_END">
+		<category name="SUM"/>			
+		<category name="LETTER_D"/>		
+		<category name="LETTER"/>		
+	</rule>
+
+	<rule category="TERM">
+		<category name="CONTISUM"/>		
+	</rule>
+<!-- Integration rule -->
+	<rule category="INTEGRATION">
+		<category name="OPEN_BRACKET"/>
+		<category name="EXP"/>
+		<category name="CLOSE_BRACKET"/>
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>		
+		<category name="SUB"/>
+		<category name="SYMB_OR_BRACED_EXP"/>	
+	</rule>
+	<rule category="INTEGRATION">
+		<category name="OPEN_BRACKET"/>
+		<category name="EXP"/>
+		<category name="CLOSE_BRACKET"/>
+		<category name="SUB"/>
+		<category name="SYMB_OR_BRACED_EXP"/>		
+		<category name="SUP"/>
+		<category name="SYMB_OR_BRACED_EXP"/>	
+	</rule>
+	<rule category="TERM">
+		<category name="INTEGRATION"/>		
+	</rule>
+
+<!--Sqrt grammar :
+NotSum <- Sqrt Exp (SqrtR)	
+-->
+	<rule category="SQRT">
+		<category terminal="true" name="\sqrt"/>
+	</rule>
+	<rule category="TERM">
+		<category name="SQRT"/>
+		<category name="SYMB_OR_BRACED_EXP"/>
+	</rule>
+<!-- Floating point value -->
+	<rule category="FLOAT">
+		<category name="DIGIT"/>
+		<category name="DECIMALSEP"/>
+		<category name="DIGIT"/>
+	</rule>
+	<!--rule category="DIGITS">
+		<category name="DIGIT"/>
+	</rule>
+	<rule category="DIGITS">
+		<category name="DIGIT"/>
+		<category name="DIGITS"/>
+	</rule-->
+<!-- TERMINALS -->
+	<rule category="LETTER">
+		<category terminal="true" name="a"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="b"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="c"/>
+	</rule>
+	<rule category="LETTER_D">
+		<category terminal="true" name="d"/>
+	</rule>	
+	<rule category="LETTER">
+		<category name="LETTER_D"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="e"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="f"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="g"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="i"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="j"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="k"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="n"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="m"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="p"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="r"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="t"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="x"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="y"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="z"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="A"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="B"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="C"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="F"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="X"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="Y"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="0"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="1"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="2"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="3"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="4"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="5"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="6"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="7"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="8"/>
+	</rule>
+	<rule category="DIGIT">
+		<category terminal="true" name="9"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="\alpha"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="\beta"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="\gamma"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="\phi"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="\pi"/>
+	</rule>
+	<rule category="LETTER">
+		<category terminal="true" name="\theta"/>
+	</rule>
+	<rule category="OTHER">
+		<category terminal="true" name="\infty"/>
+	</rule>
+<!-- symbols -->	
+	<rule category="SYMBOL">
+		<category name="DIGIT"/>
+	</rule>
+	<rule category="SYMBOL">
+		<category name="LETTER"/>
+	</rule>
+	<rule category="SYMBOL">
+		<category name="OTHER"/>
+	</rule>
+	<rule category="SYMB_OR_BRACED_SYMB">
+		<category name="SYMBOL"/>
+	</rule>
+	<rule category="SYMB_OR_BRACED_SYMB">
+		<category name="MUTE_LBRACE"/>
+		<category name="SYMB_OR_BRACED_SYMB"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	
+<!-- + - \pm -->	
+	<rule category="OPSUM">
+		<category terminal="true" name="+"/>
+	</rule>
+	<rule category="OPSUM">
+		<category terminal="true" name="-"/>
+	</rule>
+	<rule category="OPSUM">
+		<category terminal="true" name="\pm"/>
+	</rule>
+	<rule category="OPPROD">
+		<category terminal="true" name="\div"/>
+	</rule>
+	<rule category="OPPROD">
+		<category terminal="true" name="\times"/>
+	</rule>
+	<rule category="OPPROD">
+		<category terminal="true" name="/"/>
+	</rule>
+	<rule category="OPPROD">
+		<category terminal="true" name="\cdot"/>
+	</rule>
+	<rule category="OPSUM">
+		<category name="MUTE_LBRACE"/>
+		<category name="OPSUM"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="OPPROD">
+		<category name="MUTE_LBRACE"/>
+		<category name="OPPROD"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+<!-- \sum \int -->
+	<rule category="BIGOP">
+		<category terminal="true" name="\sum"/>
+	</rule>
+	
+<!--log sin cos sinh cosh-->
+	<rule category="FUNCLOG">
+		<category terminal="true" name="\log"/>
+	</rule>
+	<rule category="FUNCTRIGO">
+		<category terminal="true" name="\sin"/>
+	</rule>
+	<rule category="FUNCTRIGO">
+		<category terminal="true" name="\cos"/>
+	</rule>
+	<rule category="FUNCTRIGO">
+		<category terminal="true" name="\tan"/>
+	</rule>
+	
+	
+<!-- sub / sup script -->
+	<rule category="SUB">
+		<category terminal="true" name="_"/>
+	</rule>
+	<rule category="SUP">
+		<category terminal="true" name="^"/>
+	</rule>
+<!-- cdots ldots -->	
+	<rule category="DOTS">
+		<category terminal="true" name="\cdots"/>
+	</rule>	
+	<rule category="DOTS">
+		<category terminal="true" name="\ldots"/>
+	</rule>	
+<!-- =  \neq  \leq \lt   \geq-->
+	<rule category="EQ">
+		<category terminal="true" name="="/>
+	</rule>
+	<rule category="EQ">
+		<category terminal="true" name="\neq"/>
+	</rule>
+	<rule category="INEQ">
+		<category terminal="true" name="\leq"/>
+	</rule>
+	<rule category="INEQ">
+		<category terminal="true" name="\lt"/>
+	</rule>
+	<rule category="INEQ">
+		<category terminal="true" name="&lt;"/>
+	</rule>	
+	<rule category="INEQ">
+		<category terminal="true" name="\gt"/>
+	</rule>
+	<rule category="INEQ">
+		<category terminal="true" name="&gt;"/>
+	</rule>
+	<rule category="INEQ">
+		<category terminal="true" name="\geq"/>
+	</rule>
+	<rule category="OPEQ">
+		<category name="EQ"/>
+	</rule>
+	<rule category="OPEQ">
+		<category name="INEQ"/>
+	</rule>
+	
+<!-- coma and dot-->
+	<rule category="COMMA">
+		<category terminal="true" name=","/>
+	</rule>
+	<rule category="DOT">
+		<category terminal="true" name="."/>
+	</rule>
+	<rule category="DECIMALSEP">
+		<category name="DOT"/>
+	</rule>
+	<rule category="DECIMALSEP">
+		<category name="COMMA"/>
+	</rule>
+<!-- \rightarrow-->
+	<rule category="LIMARROW">
+		<category terminal="true" name="\rightarrow"/>
+	</rule>
+<!-- \lim-
+	<rule category="LIMIT">
+		<category terminal="true" name="\lim"/>
+	</rule>-->
+<!-- \int-->
+	<rule category="INTEGRAL">
+		<category terminal="true" name="\int"/>
+	</rule>
+<!-- ! -->
+	<rule category="FACTORIAL">
+		<category terminal="true" name="!"/>
+	</rule>
+<!-- Sets symbols -->
+	<rule category="QUANTIFIER_SYMB">
+		<category terminal="true" name="\forall"/>
+	</rule>
+	<rule category="QUANTIFIER_SYMB">
+		<category terminal="true" name="\exists"/>
+	</rule>
+	<rule category="QUANTIFIER_OP">
+		<category terminal="true" name="\in"/>
+	</rule>
+<!-- ()-->
+
+	<rule category="LEFT">
+		<category terminal="true" name="\left"/>
+	</rule>
+	<rule category="RIGHT">
+		<category terminal="true" name="\right"/>
+	</rule>
+	<rule category="LP">
+		<category terminal="true" name="("/>
+	</rule>
+	<rule category="RP">
+		<category terminal="true" name=")"/>
+	</rule>
+	<rule category="LP">
+		<category terminal="true" name="\("/>
+	</rule>
+	<rule category="RP">
+		<category terminal="true" name="\)"/>
+	</rule>
+	<rule category="LBRACE">
+		<category terminal="true" name="\{"/>
+	</rule>
+	<rule category="RBRACE">
+		<category terminal="true" name="\}"/>
+	</rule>	
+	<rule category="LBRACKET">
+		<category terminal="true" name="["/>
+	</rule>
+	<rule category="RBRACKET">
+		<category terminal="true" name="]"/>
+	</rule>
+	<rule category="OPENP">
+		<category name="LP"/>
+	</rule>
+	<rule category="OPENP">
+		<category name="LEFT"/>
+		<category name="LP"/>
+	</rule>
+	<rule category="CLOSEP">
+		<category name="RP"/>
+	</rule>
+	<rule category="CLOSEP">
+		<category name="RIGHT"/>
+		<category name="RP"/>
+	</rule>
+
+	<rule category="OPEN_BRACE">
+		<category name="LBRACE"/>
+	</rule>
+	<rule category="OPEN_BRACE">
+		<category name="LEFT"/>
+		<category name="LBRACE"/>
+	</rule>
+	<rule category="OPEN_BRACE">
+		<category name="LEFT"/>
+		<category name="MUTE_LBRACE"/>
+	</rule>
+	<rule category="CLOSE_BRACE">
+		<category name="RBRACE"/>
+	</rule>
+	<rule category="CLOSE_BRACE">
+		<category name="RIGHT"/>
+		<category name="RBRACE"/>
+	</rule>
+	<rule category="CLOSE_BRACE">
+		<category name="RIGHT"/>
+		<category name="MUTE_RBRACE"/>
+	</rule>
+	<rule category="OPEN_BRACKET">
+		<category name="LBRACKET"/>
+	</rule>
+	<rule category="OPEN_BRACKET">
+		<category name="LEFT"/>
+		<category name="LBRACKET"/>
+	</rule>
+	<rule category="CLOSE_BRACKET">
+		<category name="RBRACKET"/>
+	</rule>
+	<rule category="CLOSE_BRACKET">
+		<category name="RIGHT"/>
+		<category name="RBRACKET"/>
+	</rule>
+
+<!--Latex  { } (mute braces )-->
+	<rule category="MUTE_LBRACE">
+		<category terminal="true" name="{"/>
+	</rule>
+	<rule category="MUTE_RBRACE">
+		<category terminal="true" name="}"/>
+	</rule>
+</grammar>

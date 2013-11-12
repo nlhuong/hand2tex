@@ -1,0 +1,316 @@
+( x^3 - x^2 - x ) ( 2 x - 7 )
+z^2 - (2a - b)z + (a^2 - ab + b^2)
+i=1
+ax^2 + bx = c
+\pi (n)
+\frac{c}{d}-\frac{a}{b}=\frac{(bc-ad)}{bd}
+\frac{1}{1-c}
+y^3 = x
+a=\frac{1}{0}
+\sqrt{n}
+d=1
+153 - 51 \neq 140
+16^{0}
+\frac{5}{6}
+z= \frac 1y
+\phi=\frac{\pi}{2}
+x^3 + ax + b
+x = \pm n\pi
+y^2 = x^3 + ax^2 + bx + c
+3y^2 + 3y + 1
+80 + 152 \neq 286
+3=1+1
+187 - 42 \neq -21
+n=\pi(y)
+n = 2 k
+2(ab + bc + ca)
+x^{2}+ny^{2}
+n_1 = 1
+-(y_1 + y_2)(y_3 + y_4)
+2z^2 - 3z - 3 - 7i = 0
+a+i b
+\phi_i x_i
+ax + b y + c = 0
+187 + 136 \leq 323
+10^2-1
+x(x^2 + y^2) - 10(x^2 - y^2) = 0
+\frac{1-ax_{0}}{b}
+x = y
+166 \pm 92 + 55 - 6
+\frac{1}{1+x}
+b-a
+y^2+y=x^3-x
+x\leq 0
+z = x^2-y^2
+k=12n-1
+(a_n + b_n)
+\theta = \frac{\pi}{2}
+e=1
+x(i)
+z = 4
+\frac{dx}{\pi \sqrt{x(1-x)}}
+b \leq c
+45 - 98 + 170 - 125 + 76 \neq 77
+\frac{\sqrt{3}}{{2}}
+\frac {9 }{ 4}
+\frac{7}{5}
+n=3
+x^2=x
+b = \sqrt{c^2-a^2}
+197 + 62 \neq -74
+bz+d=0
+3 \pm 23 - 162
+a_7 x^7 + a_6 x^6 + a_5 x^5 + a_4 x^4 + a_3 x^3 + a_2 x^2 + a_1 x + a_0 = 0
+ax^4+bx^3+cx^2+dx+e = 0
+d = c
+\phi_a = \phi_b
+(1+i)
+e_1 = 9
+\phi_k = \pi
+167 + 165 = 332
+3n^2+2n
+e = \frac{c}{a}
+144^5 = 27^5 + 84^5 + 110^5 + 133^5
+\frac{6(k^3+k^2-6k-2)}{k(k-3)(k-4)}
+z=x+y
+\frac{3\pi}{7}
+x=a+id
+121 + 56 = 177
+c \leq ab
+\frac {1}{2\sqrt{x}}
+(6\sqrt{21}-27 )x^2+3x+4\sqrt{21}-18
+\theta (0) = 1
+k_y = k \sin \theta \sin \phi
+178 - 64 + 21 \leq 93
+\frac1x - \frac1y = \frac{y-x}{xy}
+12=2y
+(6\sqrt{21}-27 )x^2+3x+4\sqrt{21}-18 = 10\sqrt{21}-42
+d(x^n)
+25 - 151 + 29 - 33 = -122
+i = e
+x^k - 1 = 0
+e - 1
+3^3 + 4^3 + 5^3 = 6^3
+n(0)
+y= a x^2 + b
+x^3-2
+\theta = 0
+y = ax^k
+y=x_{n}
+x\neq\pm i
+%KME1
+\cos ( \frac \pi 2 + \alpha ) = - \sin \alpha
+\sum_{k = 1}^n k = \frac 1 2 ( n^2 + n )
+a ( n ) = \sum_{k = 1}^n ( - 1 )^{n - k} k !
+\int_1^2 ( \frac {x^2 - 1} {x^2} ) e^{x + \frac 1 x} d x
+\sin ( \alpha + \beta ) \sin ( \alpha - \beta ) = \sin^2 \alpha - \sin^2 \beta
+( z^{\frac n 2} + y^{\frac n 2} ) ( z^{\frac n 2} - y^{\frac n 2} ) = x
+( a^2 + b^2 ) ( c^2 + d^2 ) \geq ( a c + b d )^2
+%KME2
+\frac 1 a F ( a x + b ) + C
+( y + 1 )^2 = y^2 + 2 y + 1
+\sin x - \sin y - \sin ( x - y )
+\lim_{x \rightarrow 0} ( 1 + x )^{\frac 1 x}
+\lim_{x \rightarrow 0} \frac {( 1 - \cos x ) ( 1 + \cos x )} {x^2 ( 1 + \cos x )}
+\int ( 2^x - 3 e^x ) d x
+%IVC
+\sin(x+y)
+6 + ((149 \times 101) + (24 \times 139)) \geq 18390
+-(2\alpha+1) x
+c_{e_i+1}
+(x_1+b_1k)^2+(y_1-a_1k)^2
+157 + 72 \geq 228
+194 \times (46 + 161 + 55) \neq -936
+89 - 63 - 188 + 18 \geq -144
+\sum_{i=0}^{\infty} x^i = \frac{1}{1-x}
+1\leq i \leq n
+10^{-4}
+n=\sum_{i=1}^k n_i
+2^{2^{k}} + 1
+\cos x-\sqrt{-1}\sin x
+\sum c_n
+\alpha + \gamma
+\alpha_i - 1
+\sin(a+b)= \sin(a) \cos(b) +\sin(b) \cos(a)
+((144 + 159) - (176 \div 186)) + 196 \geq 497
+\lim_{x\rightarrow 0}\frac{\sin(x)}{x}=1
+d_{xz}
+\log(z) \leq z - 1
+(30 + 39) \times (42 + 52 - 85) \neq 520
+22 + 77 \geq 98
+\pi^{-1}(b)
+(x-\frac{a}{2})^2=-c^2
+x + \ldots + y
+-\frac{i}{\sqrt{2}} \sin \theta
+x^{-1}\leq x^{-1}
+138 \times 95 = 13110
+\frac{(n+\alpha)(n+\beta)(2n+2+\alpha+\beta)}{(n+1)(n+1+\alpha+\beta)(2n+\alpha+\beta)}
+(29 \div 120) - (36 - (21 \times 149)) \geq 3092
+3 \times 126 \leq 378
+(a^2 + b^2)^2 = (a + b)(a - b)^2
+61 \pm (45 \times (149 + 180)) + 37
+e^{i\theta _{2}}
+n(n+2\alpha)
+\frac{1}{\sqrt{a}}=\sqrt{\frac{1}{a}}
+(170 + 20 + 59) \div 191 \geq 0
+(x+2)^3
+\alpha+\beta
+(147 \times 109) + 126 \neq -8422
+5 \pm (137 - 194 + 49) \times 36
+\theta_{23}
+1\leq j\leq k
+(x+2)^3-(x-1)^3 = 0
+1-e^{-1}
+\alpha=2
+107 \pm ((115 \times 46) + 69) \times (29 \times 132)
+a = \int_{\alpha}^\beta x_1(y)dy + \int_{\alpha}^\beta x_2(y)dy
+x=\tan(y)
+%CROHME Extension
+y_1(z)<y(z)<y_2(z)
+0\leq b<B
+y^n<x B^k
+A \times (B \times C) = (A \times B) \times C
+A\times B
+A = B \times C
+y = Ax + A^2
+\cos(A+B)
+0 < x < 1
+A = A_1 + A_2
+B_n(1-x)=(-1)^n B_n(x)
+\gamma < B
+(A_2B_1)
+0<\gamma_i < \alpha
+A ( B + C ) = A B + A C
+% KME1
+\lim_{t \rightarrow \infty} ( 1 + \frac 1 t )^t = e
+% KME2
+e_1^2 + e_2^3 + e_3^4 + e_4^5
+[ \frac 2 3 ( 1 + \frac 9 4 x )^{\frac 3 2} \frac 4 9 ]_0^4
+\lim_{z \rightarrow 0} \frac 1 {\log_a ( 1 + z )^{\frac 1 z}}
+\int_0^{\frac \pi 2} \{ ( \cos x + e^x ) - ( e^x - \cos x ) \} d x
+\lim_{t \rightarrow 0} \frac {\cos ( \frac x 2 - t )} {- 2 t}
+\sqrt 2 ( \frac 1 {\sqrt 2} \sin x + \frac 1 {\sqrt 2} \cos x )
+% IVC
+p=\sum_{i\leq d} a_i2^i
+10^{3,64 \times 10^{12}}
+\sqrt 5 x^2 - 6x + \sqrt 5 = 0
+x=x_0 y=y_0
+(31 / (18 + 12)) + 36 = 37.03
+n(n+p)
+f(X)
+x= \frac{1162}{330}= \frac{581}{165}
+r=a_0
+f(ab^{-1}) = f(cd^{-1})
+z_3 = \frac{2 - 2\sqrt{2}}{2} = 1 - \sqrt{2}
+\sum_{k=1}^\infty X_k
+(\alpha_{1},\ldots,\alpha_{n})
+\frac{a}{b}= \frac{2^m5^ka}{2^m5^kb}=\frac{2^m5^ka}{10^{m+k}}
+f(x) dx
+a = r \sqrt{2 - \sqrt{ 3}}
+\lim_{x \rightarrow +\infty}{g(x)} = 0
+X= \frac{251}{351}
+\phi(a, b+1, n+1)=\phi(a, \phi(a, b, n+1), n)
+(0,x_1)
+(0,id,0,id)
+a_1 = \frac{r_1}{(r_1-r_2)(r_1-r_3)}
+(\pm1, \pm1, \pm1)
+\frac{dx}{dt} = -y - z
+X_0^3
+g(x_1,x_2,x_3)
+0\leq p\leq 2^n
+n(p)
+137 / 21 \geq 6
+116 \pm ((75 + 78) \times 125) - (80 / 184)
+\lim_{n\rightarrow\infty} \frac{1}{n} \sum_{k=0}^{n-1} f(X_k)
+g_{ij} = g^{ij}
+(m, p)
+z =(z_1,\ldots,z_n)
+x_1,\ldots,x_k
+x=ct
+d \times f
+f^{-1}(n)
+f(z)=\sum a_{n} z^{n}
+173 \times ((180 \times 177) / (34 + 54)) \neq 181
+(z,z)
+f(a_1) = f(a_2)
+\theta_1=\theta_2=0
+g(a) = \alpha_n \neq 0
+(n_1,n_2)+(n_2,n_1)=(n_1+n_2,n_1+n_2)
+(c_0, \ldots, c_n)
+e(t)
+f(a)=b
+y = z^2 + pz - \frac{3}{2}
+f(t)
+c \sqrt2
+2X^2 + X + 2
+((92 / 2) + (20 - 110)) - ((78 / 188) \times (69 / 8)) \leq -47
+80 + (114 / 172) \neq -10
+e=k\times\frac{2}{\sqrt 3}
+(X - r)
+((64 \times 22) + (66 + 129)) / (145 - (148 \times 132)) \neq 0
+\sum_{i=1}^n y_i^2 = 1
+10^k r_0
+199 + ((196 \times 39) \div 67) = 313.09
+f(x)= \frac{1}{x-a}+a
+\alpha_{n}=\sum_{i\leq n} a_{i}p^{i}
+\alpha 0 = 0\alpha = 0
+d_{0,0}^{2} = \frac{3 \cos^2 \theta - 1}{2}
+\sum_i d_i^2 = 168
+p(X)=X^n-\sum_{k=1}^n a_{n-k}X^{n-k}
+(x_1, \ldots, x_n)
+(140 / (90 / 124)) \times (167 - 147) = 3857.78
+f(x)= \cos(x)
+(186 + 30) / 134 \leq 2
+r(\theta)=a
+\frac{X_1 + \ldots + X_n}{n}
+5,0 \times 10^{-8}
+\frac1r
+g(y)=f(x_{0}+t,y)-f(x_{0},y)
+52 \pm 149 / (46 - (43 / 199))
+mg(3-2\cos \theta_0)
+(85 / 3) \times 44 \leq 1247
+m = \frac{1}{b-a} \times \int_{a}^{b} f(x) dx
+r=b
+p = p(a,r)
+a(x-b) + b(y+a) + c = ax -ba +ba +by +c = 0
+(i,p)
+t(0)=0
+\frac{a}{p+a}
+f(x)=x^n
+d_{2,1}^{2} = - \frac{1 + \cos \theta}{2} \sin \theta
+y(t)
+x_0, y_0
+f(n\times m)=f(n)\times f(m)=0
+(71 \div 78) \times 99 = 90.12
+4a - 4f
+\frac{f(x)}{g(x)} = \frac{f(x) - f(a)}{x-a}\frac{x - a}{g(x) - g(a)}
+f(x) = \frac{1}{b-a}
+p(x)
+(x,y)=(1,1)
+x+ (-x) = -x + x = 0
+f(z) = x^2 - y^2 + 2 i x y
+Y^{(n)}
+Y = y
+t = x - n \pi
+z = a^{p-i-j}b^p
+X + Y
+x_p = x
+y = mx
+188 \div ((110 - 37) \div (157 + 185)) = 880.77
+166 \times ((71 \div 175) - 83) = -13710.65
+47 \div (136 + 198) = 0.14
+(122 \div 185) \div 62 = 0.01
+% CROHME Extension
+\forall t \in [0,2\pi], f(t) = e^{it}
+\gamma>\gamma_0>0
+\forall a\in A, \forall b\in B, a < b
+\exists \alpha, \forall x \in [a,b]
+A_2>B_2
+t_2 > t_1 > t_0
+\forall y\in A
+\forall x \in A, \forall y \in B, x<y
+A_1,A_2,\ldots,A_n
+\forall a , \forall b , \forall c , ( a , b , c ) = ( ( a , b ) , c )
+\frac{d}{dt}\{A,B\} = \left\{\frac{dA}{dt},B \right\}+ \left\{A,\frac{dB}{dt} \right\}
+\exists Y, Y > j
+\exists i, C_1[i] < C_2[i]

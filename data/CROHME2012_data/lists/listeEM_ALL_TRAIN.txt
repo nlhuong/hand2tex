@@ -1,0 +1,299 @@
+%All_INKML.txt
+y(0) = \alpha_1
+1 \pm 20 - 173
+\sqrt{1+\frac{1}{\sqrt{2}}} +\sqrt{1-\frac{1}{\sqrt{2}}}
+10 + 67 \leq 77
+(n-1)2^{n-4}
+\sqrt{x - y - z + x^{2} + y^{2} + z^{2}}
+x_{1} + x_{2} = x_{3}
+n \log(n)
+z_1^2 + 1^z - z_2^2 + 2^z
+x^{2} + y^{2} \lt 1
+\gamma = \pi-\alpha-\beta
+\phi(x)
+[ \frac 2 3 x^{\frac 3 2} ]_0^1
+3n-5
+((117 \times 54) \div (141 \times 124)) - ((70 \div 193) \div 159) \geq 0
+x_2 = \frac{-1+i\sqrt{7}}{2}
+x_4 = -\sqrt{2}
+146 \times (101 + 157 - 181) = 11242
+0 \pm 52 \times (169 + 196 - 58)
+4, 2, 1
+(72 \div 151) \div (10 \times 152) \leq 0
+\left( z^{\frac{n}{2}} + y^{\frac{n}{2}} \right) \left( z^{\frac{n}{2}} - y^{\frac{n}{2}} \right) = x
+10x = 3
+(2 + 3i)
+\frac{4}{3}
+n_1+\ldots+n_j
+\int_a^b \frac {\sqrt x} 2 d x
+\frac{\sin \theta + \cos \theta + \tan \theta}{x + y + z}
+x^{\frac{1}{2} (1 + \frac{1}{2^2}) (1 + \frac{1}{2^4}) (1 + \frac{1}{2^8})}
+94 + 74 + 6 + 138 > 21
+\cos(a+b)= \cos(a) \cos(b) -\sin(a) \sin(b)
+a+c=b
+a_2=-1
+\theta = \frac {n \times 360} {60 \times 1000}
+c = \sqrt{a^2+b^2-2ab\cos\gamma}
+8y_{i+1}
+\log_{2} 8 + \log_{3} 9 + \log_{4} 1 6
+(z^2 + y_0 - a_0z - b_0)(z^2 + y_0 + a_0z + b_0) = 0
+a^2 - 2ab = (a - b)^2 - b^2
+(2-1)
+\lim_{x \rightarrow \frac{\pi}{2} + 0} \tan x = - \infty
+x^3 + 3x^2\sqrt{3} - 3x - \sqrt{3}
+b \neq 0
+b = \sqrt{2}
+\lim_{x \rightarrow \frac{1}{4}} \frac{1 - 4^{x - \frac{1}{4}}}{1 - 4 x}
+\forall x,y
+x \times (- \infty)
+y=x^{n}
+\alpha_{n + 1} - 3 \beta = \frac{3}{2} \alpha_{n} + \beta - 3 \beta
+\sqrt{1-z^2}
+186 \pm 6 + 98 + 176 + 92
+\sin (a - b) = \sin a \cos b - \cos a \sin b
+\sin(- x) = -\sin(x)
+(51 - 53 + 31) - ((186 \times 21) \times (161 \div 103)) \neq -8248
+6 = 2^1(2^2-1)
+x^2 - dy^2 =\pm 1
+\frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta}
+((116 - 17) \times (124 - 98)) \div 10 > 205
+\exists k, x_k
+100 \pm 15 \times 16
+89 \times ((155 \times 50) \div 132) \neq -1372
+\pm i a
+x=\beta_{3}y_{3}+\ldots+\beta_{n+1}y_{n+1}
+\sin x - \sin y - \sin \left( x - y \right)
+\frac{a^2}{b^2} = a^k
+12 + 138 + 144 + 73 > 45
+\log_c(a - b) = \log_c(c^{(\log_ca - \log_cb)} - 1 )+ \log_cb
+c^2 = (a-b)^2+2ab
+2^{50}
+\frac{n(n+1)}{2}+\frac{n(n-1)}{2}
+10^{-12}
+ \lim_{n \rightarrow \infty} t_{3n} = \frac{1}{2} \log 2 
+113 + (168 \div 86) \leq 115
+\alpha_{n + 1} - 3 \beta = \frac{2}{3} a_{n} + \beta - 3 \beta
+\cos (a + b) = \cos a \cos b - \sin a \sin b
+7 \pm (111 \div (28 + 23)) \times ((53 + 187) \times (179 \div 147))
+\frac{2 \tan \alpha}{1 - \tan^{2} \alpha}
+1 - (-1)^d
+((84 / 113) / 51) - 119 = -118.99
+ax + by + cz + d=0
+59 + 53 \neq -65
+\frac{1}{10}
+y^2=\frac{x^3}{2a-x}
+4^2 = 2^4
+120 - 14 - 107 \leq 213
+2^{69}
+ \log x(t) = \sum_{k=1}^{\infty} \frac{a_{k}}{k!} ( i t )^{ k } - \frac{1}{2} (\sum_{k=1}^{\infty} \frac{a_{k}}{k!} ( i t )^{ k } )^{2} + \frac{1}{3} (\sum_{k=1}^{\infty} \frac{a_{k}}{k!} ( i t )^{ k } )^{3} - \ldots 
+x^{-4}
+x^3 = 18x + 35
+58 + 4 \geq 61
+-2x
+\alpha_{n + 1} - 3 \beta = \frac{2}{3} \alpha_{n} + \beta - 3 \beta
+y= y_0+t^mY
+\forall x, f(x)
+x_x^x + y_y^y + z_z^z - x - y - z
+a + b + c + d + e
+\frac{1}{a} F \left( a x + b \right) + C
+\frac{b-a}{n}\leq\alpha
+(a + b)^2 = a^2 + 2ab + b^2
+z=0
+x = \frac{- b \pm \sqrt{b^{2} - 4 a c}}{2 a}
+76 \pm (102 + 150) \times 56
+(-a)^n = a^n
+\sqrt{5+2\sqrt{6} }
+40 - (134 - (144 \div 154)) \geq -93
+3^{n+1} + 2
+2^{n(n - 1)}
+12 \div 75 \geq 0
+(2-1-1)
+3 0 \times 2 9 x^{2 8}
+ z_{1} = r_{1} ( \cos \theta_{1} + i \sin \theta_{1} ) 
+n = 0
+a_{n}=n^{-\beta}
+ y = x p + \sqrt{ b^{2} + a^{2} p^{2} } 
+24 / 125 = 0.19
+69 + ((112 - 46) / 126) > 61
+\forall x\in X,(\alpha f)(x) = \alpha f(x)
+x^{i + 2 j \times k^{3} - 2 \frac{j}{i}}
+a \left( n \right) = \sum^{n}_{k = 1} \left( - 1 \right)^{n - k} k !
+x^n=z
+x - n
+(29 - 24 + 169) \times 88 \leq -14431
+x=\alpha_{1} y_{1}+\ldots+\alpha_{n+1}y_{n+1}
+\log_2 \frac 1 2 + \log_4 \frac 2 4
+42 - 85 - 18 \geq -25
+f+g
+(47 \times 111) + 85 \geq 5301
+192 - 166 \neq 12
+\sqrt{1 + \sqrt{2 + \sqrt{3 + \sqrt{4}}}}
+[ b^x \{ ( \frac a b )^x + 1 \} ]^{\frac 1 x}
+(x_1+y_1\sqrt{n})^k
+1+2+3+\ldots+(n-1)+n
+y = z x
+x^{2} + 2x + 1 = 0
+ f ( \frac{d^{n} y}{d x^{n}} , \ldots , \frac{dy}{dx} , x ) = 0 
+2^{18}
+x_{1} - x_{2} + y_{1} - y_{2} + z_{1} + z_{2}
+0=\frac{d^2 y}{dx^2}
+b_0=1
+x^2 + 2x\sqrt{2} + 1
+(n-1)
+179 \times ((10 - 77) \times (21 + 102)) \geq -1475139
+2^5+2+1
+k_1,\ldots,k_m
+ \log z = \log r + i ( \theta + 2 n \pi ) 
+((26 \div 128) + 50) - (183 \div 29) \neq -6
+\left( x^{3} - x^{2} - x \right) \left( 2 x - 7 \right)
+\sqrt{2+\sqrt{2}}
+\frac{\sin B + \sin C}{\cos B + \cos C}
+y+16=x
+\sqrt{1+x}
+(81 + (38 + 107)) \div 151 \leq 78
+y = \frac { 1}{Y}
+30 - 180 + 70 \neq 294
+15 \div ((76 \div 10) + (199 - 89)) > 0
+y_1(x) = x^2
+148 - 141 \neq -4
+A = \sqrt{a + \frac{1}{\sqrt{a + \frac{1}{\sqrt{a}}}}} + \sqrt{b}
+3a + 2 \leq 5
+F_{n} = F_{n - 1} + F_{n - 2}
+\frac{\sqrt{3}}{4}
+\log_{2} 8 = 3
+14 \times 87 \neq -196
+n \log_2 n
+m_1, m_2, m_3
+\sqrt{b^{2} - 4 a c}
+\sin^2(x)
+n-1
+ A \cdot ( B + C ) = A \cdot B + A \cdot C 
+r=\sqrt{\theta}
+b=a^2+c^2
+(166 - 122 + 32) + ((106 \div 30) \div (30 \div 18)) \geq 77
+10^n - k
+e^{-1}
+\forall x \in X
+n^{\log_2(3)}
+189 \pm 159 \times (50 \times 99)
+((31 \div 52) - (21 \div 120)) \times 102 \geq 42
+\frac{1}{500}
+\frac{x^2+y^2}{a^2}-\frac{z^2}{c^2}-1=0
+\frac{1}{-1} = \frac{-1}{1}
+83 \pm ((179 \div 23) - (149 + 151)) \div 88
+175 \times (162 \times 103) \leq 2920050
+\theta_2=\theta
+(69 + 177 \times 136) + (117 \div 140) > 5612
+ax^{2} + 2bx + c = 0
+y \neq x
+\pi \int_c^d \{ g ( y ) \}^2 d y
+n^3 = n^{\log_{2}8}
+ \lim_{n \rightarrow \infty} \frac{1}{n} \sum f ( \frac{r}{n} ) = \int_{0}^{1} f ( x ) dx 
+A = \sqrt {a + \frac 1 {\sqrt {a + \frac 1 {\sqrt a}}}} + \sqrt b
+ A \cdot B = ( A_{1} i + A_{2} j + A_{3} k ) \cdot ( B_{1} i + B_{2} j + B_{3} k ) 
+\frac{1}{\log_a(b)}
+(g^{-1})^{ij}
+21-5\sqrt{21} + (15\sqrt{7}-21\sqrt{3})i
+c(0) = 1
+ x^{2} \frac{d^{2} y}{d x^{2}} - 3 x \frac{dy}{dx} + y =\frac{\log x \cdot \sin{\log x} + 1}{x} 
+x_0, y_0, z_0
+z^2 - 2z - 1 = 0
+\sin(x)
+x_{1} - x_{2} + y_{1} - y_{2} + z_{1} - z_{2}
+\int_{\log 3}^0 \frac 1 {e^t + 1} d t
+x_1 \times x_2 \times x_3 \times x_4 = X
+k_n=1
+151 \pm 143 \div 97
+\int \left( 2^{x} - 3 e^{x} \right) d x
+((56 \times 52) \div 135) + (34 - (74 \times 92)) \geq -6752
+172 - 111 - 55 - 187 \neq -83
+x=\phi_{ki}(z)
+(x + 1) (8x^3 - 4x^2 - 4x + 1)=0
+e^{i \pi} + 1 = 0
+\frac{2}{3}n^3
+y_{1} + y_{3} = \sqrt{z_{2}}
+\frac{y_2x_2-y_1x_1}{n}
+x_{(k)}
+((126 \div 185) \times (59 + 139)) - 59 > 0
+y = \frac{1}{x^2 + 1}
+2^n-1
+32 \pm 12 \times 15
+x^2 - x - 1 = 0
+\lim_{x \rightarrow \infty} \int_0^x e^{- y^2} d y = \frac {\sqrt \pi} 2
+\sqrt {1 + \sqrt {2 + \sqrt {3 + \sqrt 4}}}
+\cos(2x)=\cos^2(x)-\sin^2(x)
+\sin^{2} \theta + \cos^{2} \theta = 1
+\frac{\beta}{\alpha-1}
+\frac1{n^{k+2}}
+y(\phi)
+y = \frac{1}{x}
+76 \pm ((41 + 118) \times 124) \times 130
+(18 + 22) \div 92 \neq 0
+c_1=a_{11}
+x^2+x+1 = 0
+x^5+x+a
+\pi(e_1)
+\forall t \in (0,1)
+\sum_{i = 2 n + 3 m}^{1 0} i x
+4 \div 182 = 0.02
+b_{n}-a_{n}
+26 \pm (109 + 119 - 82) \div ((169 - 123) + (20 \div 175))
+2^{17}
+ \phi ( x , y , \frac{\frac{dy}{dx}- \tan \alpha}{1 + \frac{dy}{dx} \tan \alpha} ) = 0 
+x+dx
+(166 + (93 \times 67)) - (64 + 127 + 176) \leq 6030
+\gamma = 1 + \frac{1}{n}
+\frac 2 {\frac {3 m - 2 n \times 9^n - 9^m} {2 n - 1}}
+\frac{1}{3}\frac{1}{3}\gamma
+n\times d
+a^2-2ab
+\cos(4a) = 8\cos^4(a) - 8\cos^2(a) +1
+7 \times 154 \neq -1362
+\theta + \pi
+e = \sum^{\infty}_{k = 0} \frac{1}{k !}
+\exists x
+\lim_{x \rightarrow - 1} \frac{x^{3} + 1}{x + 1}
+ac=1
+((24 - 44) \times 61) - (64 \div (196 + 162)) > -992
+0 \pm 145 - 35
+\frac{(e^{i x} - e^{-i x})}{2} = i \sin(x)
+Y = g(X) = \frac{1}{X}
+1 - 1 + 1 - 1 + \ldots
+(\gamma )
+126 - 48 = 78
+19 \times 7 \leq 133
+\sin (nx)
+60 - 136 \geq -76
+x^4 - 4x^3\sqrt{2} + 2x^2 + 4x\sqrt{2}+ 1
+f(x) = X^2 - 4X - 5
+ p^{3} - ( x^{2} + x y + y^{2} ) p^{2} + ( x^{3} y + x^{2} y^{2} +x y^{3} ) p - x^{3} y^{3} = 0 
+((138 + 42) \div 93) + (73 + 141 + 169) > 346
+x_{i} - x_{i + 1} + x_{i + 2}
+\tan z = \frac{\sin z}{\cos z}
+(a + c)^2 = 12
+\frac{9}{5}
+((98 + 150) + (76 \div 16)) + ((97 \div 92) \times 151) \neq 326
+ ( a_{1}^{2} + a_{2}^{2} + \ldots + a_{n}^{2} )( b_{1}^{2} + b_{2}^{2} + \ldots + b_{n}^{2} )\geq ( a_{1} b_{1} + a_{2} b_{2} + \ldots + a_{n} b_{n} )^{2} 
+-\frac{1}{\pi}
+78 \pm 5 \times 47
+dx^3+(4e-c^2)x^2-2cdx-d^2 = 0
+12 \pm ((29 \times 6) + 22) + ((47 \times 133) - (86 - 187))
+\cos x + i \sin x=e^{ix}
+10^{64}
+e^{X}e^{Y}
+\int \left( 2^{x} - 3 e^{x} \right) d_{x}
+\sum_0^\infty \frac{1}{n^2}
+199 - 151 = 48
+2 {k} {\pi}
+e = 2
+6a^2
+67 - 132 - 181 - 194 = -52
+n-i
+n^2 - n + 41
+(n+3)
+37 \times 45 \geq 1664
+1 + \frac{1}{1 !} + \frac{1}{2 !} + \frac{1}{3 !} + \frac{1}{4 !}
+\gamma_{jk}
+102 + 72 \geq 173
+3 = \sqrt{6+\sqrt{6+\sqrt{6+\sqrt{6+\ldots}}}}
+x^{i + 2 j \times k^{3} - \frac{j}{2 i}}
