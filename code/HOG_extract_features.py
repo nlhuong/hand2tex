@@ -18,13 +18,13 @@ from process_strokes import FULL_DIM
 
 def HOG_image(img):
     # old values of pixels per cell 5,10,20
-    fd_0 = hog(img, orientations=16, pixels_per_cell=(5, 5),
+    fd_0 = hog(img, orientations=8, pixels_per_cell=(5, 5),
                             cells_per_block=(1, 1), normalise=False,visualise=False)
     
-    fd_1 = hog(img, orientations=16, pixels_per_cell=(12, 12),
+    fd_1 = hog(img, orientations=8, pixels_per_cell=(10, 12),
                             cells_per_block=(1, 1), normalise=False,visualise=False)
 
-    fd_2 = hog(img, orientations=16, pixels_per_cell=(25, 25),
+    fd_2 = hog(img, orientations=8, pixels_per_cell=(20, 20),
                             cells_per_block=(1, 1), normalise=False,visualise=False)
     
     
