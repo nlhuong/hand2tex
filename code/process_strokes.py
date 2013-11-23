@@ -69,7 +69,7 @@ DICT_MAP = {
             }
 
 # list of symbols whose upper case is only distinguishable by the relative scaling
-SYM_CASE_SAME = ["c","C","z","Z","x","X","k","K","p","P"]
+SYM_CASE_SAME = ["c","C","z","Z","x","X","k","K","p","P","y","Y"]
 
 # TODO: fix this, it doesn't work right now 
 def special_treatment(symbol,trace_list,bitmap_list,symbol_list):

@@ -55,7 +55,7 @@ def HOG_dataset(file_name = "clean_symbols_45"):
         fd_list.append(fd)
         dataset = (fd_list,symbol_ind,symbol_list)
         
-    filename = "XL_HOG_" + file_name + ".p"
+    filename = "HOG_" + file_name + ".p"
     save_filename = os.path.join("../pickle_files/features",filename)
     
     with open(save_filename,'wb') as f:

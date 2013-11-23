@@ -32,7 +32,7 @@ print "Loading features..."
 
 # construct dictionary
 ind_to_sym = dict(zip(Y,symbol))
-print ind_to_sym.keys()
+#print ind_to_sym.keys()
 
 # load original data 
 print "Loading original data..."
@@ -51,11 +51,11 @@ for (ind,X_HOG_cur) in enumerate(X_HOG):
         
         # get top other classes
         log_prob = clf.predict_proba(X_HOG_cur)[0]
-        print log_prob
+        #print log_prob
         
         top_index_list = [1 + i[0] for i in sorted(enumerate(log_prob), key=lambda x:x[1])]
         top_index_list.reverse()
-        print log_prob[top_index_list[0:5]]
+        #print log_prob[top_index_list[0:5]]
         
         for guess_ind in top_index_list[0:5]: 
             print ind_to_sym[guess_ind]
