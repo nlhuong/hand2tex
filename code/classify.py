@@ -9,14 +9,12 @@ Classifies using SVM.
 import os
 import pickle
 from sklearn import svm
-from settings import load_data
+from read_data import load_data
 
 DUMP_LOCATION = "../pickle_files"
 
 (X,symbol_ind,symbol) = load_data()
 
-#X = [[0, 0], [1, 1]]
-#y = [0, 1]
 clf = svm.SVC(kernel='rbf',gamma=0.001)
 clf.fit(X,symbol_ind)
 
