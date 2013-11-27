@@ -1,11 +1,15 @@
+import bisect
+
 def loop_ML(mathML, label, list_sym_label):
     """
-    Takes in the mathml object and a list of symbols, and outputs spatial labels for each symbol.
-    The labels are list of nested spatial relations, i.e. for values 0, 0.1, -1, 1, 0.5, -0.5, 2, -2 denoting
-    base, square root, subscript, superscript, numerator, denominator, over, and under respectively, we can have for x in
-    $\frac{a+b}{\frac{2^x}{3+6}}$ we would have an output ['x', [-0.5, 0.5, 1]], for y in
-    $a^{\frac{1}{\frac{b_y}{z+w}}}$ the output would be ['y', [1, -0.5, 0.5, -1]], for z in
-    $\sqrt{b^{z} - 4 a c}$ the output would be ['z', [2, 1]].
+    Takes in the mathml object and a list of symbols, and outputs spatial labels 
+    for each symbol. The labels are list of nested spatial relations, i.e. for 
+    values 0, 0.1, -1, 1, 0.5, -0.5, 2, -2 denoting base, square root, subscript, 
+    superscript, numerator, denominator, over, and under respectively, we can have 
+    for x in $\frac{a+b}{\frac{2^x}{3+6}}$ we would have an output 
+    ['x', [-0.5, 0.5, 1]], for y in $a^{\frac{1}{\frac{b_y}{z+w}}}$ the output 
+    would be ['y', [1, -0.5, 0.5, -1]], for z in $\sqrt{b^{z} - 4 a c}$ the output
+    would be ['z', [2, 1]].
     """
     
     if mathML == None:
@@ -122,7 +126,7 @@ def space_relations(list_sym_label):
                 index0 = len(label1)-1
                 index1 = -1
                 
-            if (label0[index0] != 2 and label1[index1] == 2) or \
+            if (label0[index0] < 2 and label1[index1] == 2) or \
                (label0[index0] != 0.5 and label1[index1] == 0.5) or \
                (label0[index0] == -1 and label1[index1] == 1):
                 label = vertical_up
@@ -133,7 +137,7 @@ def space_relations(list_sym_label):
                 label = vertical_down
                             
             elif (label0[index0] == 0 and label1[index1] == 1) or \
-                 (label0[index0] <= -1 and label1[index1] == 0):
+                 (label0[index0] < 0 and label1[index1] == 0):
                 label = superscript
                             
             elif (label0[index0] == 0 and label1[index1] == -1) or \
@@ -141,7 +145,39 @@ def space_relations(list_sym_label):
                 label = subscript
                 
             elif label0[index0] == label1[index1]:
-                label = horizontal
+                if len(label0) > len(label1):
+                    sub = [i <= -0.5 for i in label0[len(label1):]]
+                    sup = [i >= 0.5 for i in label0[len(label1):]]                   
+                    if True in sub:
+                        if True in sup:
+                            if sub.index(True) < sup.index(True):
+                                label = superscript
+                            else:
+                                label = subscript
+                        else:
+                            label = superscript
+                    elif True in sup:
+                        label = subscript
+                    else:
+                        label = horizontal
+                elif len(label0) < len(label1):
+                    sub = [i <= -0.5 for i in label1[len(label0):]]
+                    sup = [i >= 0.5 for i in label1[len(label0):]]                   
+                    
+                    if True in sub:
+                        if True in sup:
+                            if sub.index(True) < sup.index(True):
+                                label = subscript
+                            else:
+                                label = superscript
+                        else:
+                            label = subscript
+                    elif True in sup:
+                        label = superscript
+                    else:
+                        label = horizontal
+                else:
+                    label = horizontal 
             
             if symbol0 == '-' and label0[-1] == 0 and \
                label1[len(label0) - 1] == 0.5:
