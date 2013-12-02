@@ -23,6 +23,7 @@ def features(bar_info, cur_bounds, next_bounds):
     hor_center_C = 0.5*(next_bounds[2]+next_bounds[0]) 
         
     hB = cur_bounds[3] - cur_bounds[1]
+    if hB == 0: hB = 0.1 # handling division by zero
     hC = next_bounds[3] - next_bounds[1]
     
     
